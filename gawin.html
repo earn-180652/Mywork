@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joss Way-Ar | Profile</title>
+    <style>
+        :root {
+            --primary-purple: #6a0dad;
+            --primary-red: #d40000;
+            --dark-bg: #121212;
+            --card-bg: #1e1e1e;
+            --text-white: #ffffff;
+        }
+
+        body {
+            font-family: 'Kanit', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-white);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* --- Navbar --- */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background: linear-gradient(90deg, #300650, #600000);
+            border-bottom: 2px solid var(--primary-purple);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo { font-size: 1.8rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; }
+        .logo span { color: var(--primary-red); }
+        
+        /* ปรับเมนูภาษาอังกฤษ */
+        .nav-links a { 
+            color: white; 
+            text-decoration: none; 
+            margin-left: 15px; 
+            font-weight: bold; 
+            padding: 8px 15px; 
+            border-radius: 5px; 
+            transition: 0.3s; 
+        }
+        .nav-links a:hover { background-color: var(--primary-red); }
+
+        /* --- Layout: Split Screen --- */
+        .main-content {
+            display: flex;
+            min-height: calc(100vh - 70px);
+            flex-wrap: wrap;
+        }
+
+        .left-side {
+            flex: 1;
+            min-width: 400px;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            position: relative;
+        }
+
+        .portrait-frame {
+            width: 100%;
+            max-width: 400px;
+            height: 550px;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 4px solid var(--primary-purple);
+            box-shadow: 0 0 30px rgba(106, 13, 173, 0.5);
+            position: relative;
+        }
+
+        .slides {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            overflow-x: scroll;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+        }
+
+        .slides::-webkit-scrollbar { display: none; }
+
+        .slides img {
+            min-width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 15%;
+            scroll-snap-align: start;
+        }
+
+        .slide-nav {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .slide-nav a {
+            width: 12px;
+            height: 12px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.5;
+        }
+
+        .right-side {
+            flex: 1.2;
+            padding: 60px 5%;
+            background: linear-gradient(135deg, #121212 0%, #1a1a1a 100%);
+        }
+
+        .bio-info h1 {
+            font-size: 3rem;
+            color: var(--primary-red);
+            margin-bottom: 5px;
+        }
+
+        .info-list {
+            list-style: none;
+            padding: 0;
+            margin: 30px 0;
+        }
+
+        .info-list li {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #333;
+        }
+
+        .info-list span { color: var(--primary-purple); font-weight: bold; width: 120px; display: inline-block; }
+
+        .work-section { padding: 5% 10%; background: #000; }
+        .work-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 30px; }
+        
+        .work-card {
+            display: flex;
+            background: var(--card-bg);
+            padding: 15px;
+            border-radius: 15px;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .work-img-mini {
+            width: 120px;
+            height: 70px;
+            border-radius: 10px;
+            background: #333;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        .work-img-mini img { width: 100%; height: 100%; object-fit: cover; }
+
+        .video-area { margin-top: 50px; border-radius: 20px; overflow: hidden; border: 2px solid var(--primary-red); }
+
+        @media (max-width: 850px) {
+            .main-content { flex-direction: column; }
+            .left-side { min-width: 100%; padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">JOSS <span>GAWIN</span></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="joss.html">Joss</a>
+            <a href="gawin.html">Gawin</a>
+            <a href="both.html">JossGawin</a>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <div class="left-side">
+            <div class="portrait-frame">
+                <div class="slides" id="slider">
+                    <img src="https://i.pinimg.com/736x/28/7d/f9/287df900967a5baa2064ffa8f6d9d918.jpg" id="img1">
+                    <img src="https://i.pinimg.com/736x/21/76/a5/2176a55f66a84d10c34d8600cedf11f3.jpg" id="img2">
+                    <img src="https://i.pinimg.com/1200x/62/23/70/622370af4e432b185106839318abee1b.jpg" id="img3">
+                    <img src="https://i.pinimg.com/1200x/c3/e6/0e/c3e60ef49c221e1dbd767d0ad0610a0d.jpg" id="img4">
+                    <img src="https://i.pinimg.com/1200x/98/ac/c3/98acc3dbb109fa3f97bd8fc208fbdbb6.jpg" id="img5">
+                    <img src="https://i.pinimg.com/736x/23/62/8b/23628b77bd5a61d131bd1865cf92c88e.jpg" id="img6">
+                    <img src="https://i.pinimg.com/1200x/8b/ce/3e/8bce3e293d76fa2a518c89c0577136fd.jpg" id="img7">
+                </div>
+                <div class="slide-nav">
+                    <a href="#img1"></a>
+                    <a href="#img2"></a>
+                    <a href="#img3"></a>
+                </div>
+            </div>
+            <p style="position: absolute; bottom: 10px; color: #555;">← เลื่อนรูปเพื่อดูเพิ่มเติม →</p>
+        </div>
+
+        <div class="right-side">
+            <div class="bio-info">
+                <h1>Joss Way-Ar</h1>
+                <h3>จอส เวอาร์ แสงเงิน</h3>
+                <ul class="info-list">
+                    <li><span>วันเกิด:</span> 8 มีนาคม 1996</li>
+                    <li><span>อายุ:</span> 29 ปี</li>
+                    <li><span>สัญชาติ:</span> ไทย</li>
+                    <li><span>ภูมิลำเนา:</span> อ.ทุ่งสง จ.นครศรีธรรมราช</li>
+                    <li><span>การศึกษา:</span> ปริญญาตรี คณะนิเทศศาสตร์ (หลักสูตรนานาชาติ) จุฬาลงกรณ์มหาวิทยาลัย</li>
+                    <li><span>สังกัด:</span> GMMTV</li>
+                    <li><span>ความสามารถพิเศษ:</span> บาสเกตบอล , มวย (เเชมป์10fight10) </li>
+                </ul>
+                <p><strong>เส้นทางในวงการ:</strong> เริ่มก้าวเข้าสู่วงการบันเทิงจากการเป็นนายแบบและหนึ่งในสมาชิกกลุ่ม 'ดูมันดิ' (Domundi TV) ด้วยรูปร่างที่โดดเด่นและเสน่ห์เฉพาะตัว ทำให้เขาได้รับการชักชวนเข้าสู่สังกัด GMMTV และแจ้งเกิดอย่างเต็มตัวในฐานะนักแสดงแถวหน้า </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="work-section">
+        <h2>ผลงานการแสดง (Selected Works)</h2>
+        <div class="work-grid">
+            <div class="work-card">
+                <div class="work-img-mini"><img src="https://www.one31.net/uploads/show/poster/th/image_resized20181105192626.jpg"></div>
+                <div><small>2018</small><br><strong>Friend Zone เอา ให้ ชัด</strong></div>
+            </div>
+            <div class="work-card">
+                <div class="work-img-mini"><img src="https://cms.dmpcdn.com/dara/2019/01/23/1d4cd72b-b458-4680-a69d-cfda89d4d42c_original.png"></div>
+                <div><small>2019</small><br><strong>Wolf เกมล่าเธอ</strong></div>
+            </div>
+            <div class="work-card">
+                <div class="work-img-mini"><img src="https://upload.wikimedia.org/wikipedia/th/8/84/3_Will_Be_Free_poster.jpg"></div>
+                <div><small>2019</small><br><strong>3 Will Be Free สามเราต้องรอด</strong></div>
+            </div>
+            <div class="work-card">
+                <div class="work-img-mini"><img src="https://upload.wikimedia.org/wikipedia/th/thumb/a/a2/%E0%B9%80%E0%B8%81%E0%B8%A1%E0%B8%A3%E0%B8%B1%E0%B8%81%E0%B9%80%E0%B8%AD%E0%B8%B2%E0%B8%84%E0%B8%B7%E0%B8%99.jpg/250px-%E0%B9%80%E0%B8%81%E0%B8%A1%E0%B8%A3%E0%B8%B1%E0%B8%81%E0%B9%80%E0%B8%AD%E0%B8%B2%E0%B8%84%E0%B8%B7%E0%B8%99.jpg"></div>
+                <div><small>2019</small><br><strong>เกมรักเอาคืน</strong></div>
+            </div>
+            <div class="work-card">
+                <div class="work-img-mini"><img src="https://s.isanook.com/mv/0/ud/20/100621/111111poster.jpg?ip/resize/w728/q80/jpg"></div>
+                <div><small>2020</small><br><strong>ไฟสิ้นเชื้อ</strong></div>
+            </div>
+            <div class="work-card">
+                <div class="work-img-mini"><img src="https://www.gmm-tv.com/cms/upload_file/videos/thumb/2020/09/5ae174b06e66a89d7ae6f6fe86396a14.jpg"></div>
+                <div><small>2020</small><br><strong>Friend Zone 2: Dangerous Area</strong></div>
+            </div>
+            <div class="work-card">
+                <div class="work-img-mini"><img src="https://static.thairath.co.th/media/ZmMhrq2pZGUCrA2ZaKbPzOjLN4wjlnxeYIYe4dmTpxtEHyJXZTAgZjs3v6Qgzg8.jpg"></div>
+                <div><small>2021</small><br><strong>นาบี ฉันจะไม่รักเธอ</strong></div>
+            </div>
+            <div class="work-card">
+                <div class="work-img-mini"><img src="https://upload.wikimedia.org/wikipedia/th/0/00/The_Player_%28Thai_TV_Series%29_poster.png"></div>
+                <div><small>2021</small><br><strong>The Player</strong></div>
+            </div>
+            <div class="work-card">
+                <div class="work-img-mini"><img src="https://i.ytimg.com/vi/I-6rkobcC6M/maxresdefault.jpg"></div>
+                <div><small>2022</small><br><strong>Mama Gogo แม่มาคุม...หนุ่มบาร์โฮส</strong></div>
+            </div>
+            <div class="work-card">
+                <div class="work-img-mini"><img src="https://s359.kapook.com/pagebuilder/f0c1bb8c-40df-497f-8272-c3dc9e6401f4.jpg"></div>
+                <div><small>2022</small><br><strong>Good Old Days ร้านซื้อขายความทรงจำ</strong></div>
+            </div>
+            <div class="work-card">
+                <div class="work-img-mini"><img src="https://www.gmm25.com/2016/upload_2020/images/maxresdefault144552.jpg"></div>
+                <div><small>2023</small><br><strong>Midnight Museum พิพิธภัณฑ์รัตติกาล(รับเชิญ)</strong></div>
+            </div>
+            <div class="work-card">
+                <div class="work-img-mini"><img src="https://i.ytimg.com/vi/Mp7yQhKmwdU/maxresdefault.jpg "></div>
+                <div><small>2023</small><br><strong>โคตรเหงา เราสองคน</strong></div>
+            </div>
+            <div class="work-card">
+                <div class="work-img-mini"><img src="https://gmm25.com/asset/upload/vod_channel/horizontal_20250226115552.jpg"></div>
+                <div><small>2025</small><br><strong>My Golden Blood เลือดนายลมหายใจฉัน</strong></div>
+            </div>
+            <div class="work-card">
+                <div class="work-img-mini"><img src="https://i.ytimg.com/vi/EV10OIiZQ5E/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCncb0796GyGZ2kT54EuSowal8sSg"></div>
+                <div><small>2026</small><br><strong>Only Friends: Dream On</strong></div>
+            </div>
+        </div>
+
+        <div class="video-area">
+            <iframe width="100%" height="450" <iframe width="560" height="315" src="https://www.youtube.com/embed/nExD4HaRskg?si=X7oU56ktjijx3cy7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></iframe>
+        </div>
+    </div>
+
+    </div>
+
+    <footer>
+        <p style="text-align: center; padding: 20px; color: #444;">&copy; 2026 JOSS GAWIN FANPAGE PROJECT</p>
+    </footer>
+
+</body>
+</html>
