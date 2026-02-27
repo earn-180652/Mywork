@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Joss Gawin Fanpage | หน้าหลัก</title>
     <style>
-        /* ส่วนของการตั้งค่าสีหลัก (ม่วง-แดง) */
         :root {
             --primary-purple: #6a0dad;
             --primary-red: #d40000;
@@ -15,57 +14,59 @@
         }
 
         body {
-            font-family: 'Kanit', sans-serif; /* แนะนำให้ใช้ฟอนต์ Kanit เพื่อความสวยงาม */
+            font-family: 'Kanit', sans-serif;
             background-color: var(--dark-bg);
             color: var(--text-white);
             margin: 0;
             padding: 0;
-            line-height: 1.6;
         }
 
-        /* ส่วนหัว (Header) */
-        header {
-            background: linear-gradient(135deg, var(--primary-purple), var(--primary-red));
-            padding: 50px 20px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        /* --- ปรับปรุงส่วน Header & Nav ให้แยกซ้าย-ขวา --- */
+        .navbar {
+            display: flex;
+            justify-content: space-between; /* แยกซ้าย-ขวา */
+            align-items: center; /* จัดให้อยู่ตรงกลางแนวตั้ง */
+            padding: 15px 5%;
+            background: linear-gradient(90deg, #300650, #600000); /* พื้นหลังไล่สีเข้ม */
+            border-bottom: 2px solid var(--primary-purple);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 3rem;
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--text-white);
             text-transform: uppercase;
             letter-spacing: 2px;
         }
 
-        /* เมนูนำทาง (Navigation) */
-        nav {
-            background-color: rgba(0,0,0,0.8);
-            padding: 15px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 2px solid var(--primary-purple);
+        .logo span {
+            color: var(--primary-red); /* แต่งสีคำว่า GAWIN เป็นสีแดง */
         }
 
-        nav a {
+        .nav-links {
+            display: flex;
+            gap: 10px;
+        }
+
+        .nav-links a {
             color: white;
             text-decoration: none;
-            margin: 0 10px;
             font-weight: bold;
-            padding: 10px 20px;
-            border-radius: 30px;
+            padding: 8px 18px;
+            border-radius: 5px;
             transition: 0.3s;
-            border: 1px solid transparent;
+            font-size: 1rem;
         }
 
-        nav a:hover {
+        .nav-links a:hover {
             background-color: var(--primary-red);
-            border-color: white;
+            box-shadow: 0 0 10px var(--primary-red);
         }
 
-        /* ส่วนเนื้อหา (Content) */
+        /* --- ส่วนเนื้อหา --- */
         .container {
             max-width: 1000px;
             margin: 40px auto;
@@ -75,11 +76,14 @@
         .welcome-section {
             text-align: center;
             margin-bottom: 50px;
+            padding: 40px;
+            background: linear-gradient(rgba(106, 13, 173, 0.2), rgba(212, 0, 0, 0.1));
+            border-radius: 20px;
         }
 
         .profile-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr; /* แบ่ง 2 คอลัมน์ */
+            grid-template-columns: 1fr 1fr;
             gap: 30px;
         }
 
@@ -87,124 +91,88 @@
             background-color: var(--card-bg);
             border-radius: 15px;
             overflow: hidden;
-            border-bottom: 5px solid var(--primary-purple);
-            transition: transform 0.3s;
+            border: 1px solid #333;
+            transition: 0.3s;
         }
 
         .profile-card:hover {
-            transform: translateY(-10px);
-            border-bottom-color: var(--primary-red);
+            border-color: var(--primary-purple);
+            transform: scale(1.02);
         }
 
         .profile-img {
             width: 100%;
-            height: 400px;
-            background-color: #333; /* สีเทาไว้ก่อนถ้ายังไม่มีรูป */
+            height: 350px;
+            background-color: #252525;
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
-        }
-
-        .profile-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
         }
 
         .profile-info {
-            padding: 20px;
+            padding: 25px;
         }
 
         .profile-info h2 {
             margin-top: 0;
             color: var(--primary-red);
-            border-bottom: 1px solid #444;
-            padding-bottom: 10px;
-        }
-
-        .profile-info ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .profile-info ul li {
-            margin-bottom: 10px;
-        }
-
-        .profile-info span {
-            font-weight: bold;
-            color: #aaa;
         }
 
         footer {
             text-align: center;
-            padding: 40px;
-            background-color: #000;
-            margin-top: 50px;
+            padding: 30px;
+            color: #666;
             border-top: 1px solid #333;
         }
 
-        /* สำหรับมือถือ */
         @media (max-width: 768px) {
-            .profile-grid {
-                grid-template-columns: 1fr;
-            }
+            .navbar { flex-direction: column; gap: 15px; }
+            .profile-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>JOSS GAWIN</h1>
-        <p>OFFICIAL FANPAGE PROJECT</p>
-    </header>
-
-    <nav>
-        <a href="index.html">หน้าหลัก</a>
-        <a href="joss.html">ผลงานจอส</a>
-        <a href="gawin.html">ผลงานกวิน</a>
-        <a href="both.html">ผลงานคู่</a>
-    </nav>
+    <div class="navbar">
+        <div class="logo">JOSS <span>GAWIN</span></div>
+        <div class="nav-links">
+            <a href="index.html">หน้าหลัก</a>
+            <a href="joss.html">ผลงานจอส</a>
+            <a href="gawin.html">ผลงานกวิน</a>
+            <a href="both.html">ผลงานคู่</a>
+        </div>
+    </div>
 
     <div class="container">
         
         <div class="welcome-section">
-            <h2>ยินดีต้อนรับสู่เว็บไซต์แฟนคลับ</h2>
-            <p>รวบรวมข้อมูลและผลงานของ จอส เวอาร์ และ กวิน แคสกี้</p>
+            <h1>WELCOME TO FANPAGE</h1>
+            <p>เว็บบล็อกรวบรวมประวัติและผลงานของ "จอส เวอาร์" และ "กวิน แคสกี้"</p>
         </div>
 
         <div class="profile-grid">
             
             <div class="profile-card">
                 <div class="profile-img">
-                    <img src="ใส่ชื่อไฟล์รูปจอส.jpg" alt="จอส เวอาร์">
+                    <img src="joss_profile.jpg" alt="Joss Way-Ar" style="width:100%; height:100%; object-fit:cover;">
                 </div>
                 <div class="profile-info">
                     <h2>Joss Way-Ar</h2>
-                    <ul>
-                        <li><span>ชื่อจริง:</span> (ใส่ข้อมูลที่นี่)</li>
-                        <li><span>ชื่อเล่น:</span> (ใส่ข้อมูลที่นี่)</li>
-                        <li><span>วันเกิด:</span> (ใส่ข้อมูลที่นี่)</li>
-                        <li><span>อายุ:</span> (ใส่ข้อมูลที่นี่)</li>
-                        <li><span>การศึกษา:</span> (ใส่ข้อมูลที่นี่)</li>
-                    </ul>
+                    <p><strong>ชื่อจริง:</strong> [รอข้อมูล...]</p>
+                    <p><strong>วันเกิด:</strong> [รอข้อมูล...]</p>
+                    <p><strong>อายุ:</strong> [รอข้อมูล...]</p>
                 </div>
             </div>
 
-            <div class="profile-card" style="border-bottom-color: var(--primary-red);">
+            <div class="profile-card">
                 <div class="profile-img">
-                    <img src="ใส่ชื่อไฟล์รูปกวิน.jpg" alt="กวิน แคสกี้">
+                    <img src="gawin_profile.jpg" alt="Gawin Caskey" style="width:100%; height:100%; object-fit:cover;">
                 </div>
                 <div class="profile-info">
                     <h2>Gawin Caskey</h2>
-                    <ul>
-                        <li><span>ชื่อจริง:</span> (ใส่ข้อมูลที่นี่)</li>
-                        <li><span>ชื่อเล่น:</span> (ใส่ข้อมูลที่นี่)</li>
-                        <li><span>วันเกิด:</span> (ใส่ข้อมูลที่นี่)</li>
-                        <li><span>อายุ:</span> (ใส่ข้อมูลที่นี่)</li>
-                        <li><span>ความสามารถพิเศษ:</span> (ใส่ข้อมูลที่นี่)</li>
-                    </ul>
+                    <p><strong>ชื่อจริง:</strong> [รอข้อมูล...]</p>
+                    <p><strong>วันเกิด:</strong> [รอข้อมูล...]</p>
+                    <p><strong>อายุ:</strong> [รอข้อมูล...]</p>
                 </div>
             </div>
 
@@ -213,8 +181,7 @@
     </div>
 
     <footer>
-        <p>จัดทำโดย [ใส่ชื่อของคุณ] เพื่อส่งคุณครู</p>
-        <p>&copy; 2024 JOSS GAWIN FANPAGE</p>
+        <p>สร้างโดย: [ชื่อของคุณ] | ส่งงานอาจารย์วิชาคอมพิวเตอร์</p>
     </footer>
 
 </body>
