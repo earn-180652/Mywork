@@ -40,24 +40,20 @@
         .nav-links a:hover { background-color: var(--primary-red); }
 
         /* --- Header Section --- */
-  .hero-section {
-      height: 60vh;
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                  url('https://i.pinimg.com/736x/d7/77/b5/d777b5255d792aaef86bf56d56cf5a63.jpg');
-      background-size: cover;
-      
-      /* ปรับเป็น top เพื่อให้เริ่มแสดงจากขอบบนสุดของรูป จะได้เห็นหัวไม่โดนตัด */
-      background-position: top center; 
-      
-      /* หรือถ้ายังไม่พอใจ สามารถใช้เปอร์เซ็นต์ได้ เช่น center 10% (ยิ่งน้อยยิ่งเห็นหัว) */
-      /* background-position: center 0%; */
-
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-  }
+        .hero-section {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://i.pinimg.com/736x/d7/77/b5/d777b5255d792aaef86bf56d56cf5a63.jpg');
+            background-size: cover;
+            
+            /* ปรับจาก center เป็น top หรือ 0% เพื่อดันรูปขึ้นไปให้เห็นส่วนหัว */
+            background-position: center 0%; 
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
 
         /* --- Section 1: The Timeline (Zig-Zag) --- */
         .section-padding { padding: 80px 10%; }
