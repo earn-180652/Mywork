@@ -22,7 +22,7 @@
             overflow-x: hidden;
         }
 
-        /* --- Navbar (คงเดิมเหมือนหน้าแรก) --- */
+        /* --- Navbar --- */
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -36,7 +36,17 @@
         }
         .logo { font-size: 1.8rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; }
         .logo span { color: var(--primary-red); }
-        .nav-links a { color: white; text-decoration: none; margin-left: 15px; font-weight: bold; padding: 8px 15px; border-radius: 5px; transition: 0.3s; }
+        
+        /* ปรับเมนูภาษาอังกฤษ */
+        .nav-links a { 
+            color: white; 
+            text-decoration: none; 
+            margin-left: 15px; 
+            font-weight: bold; 
+            padding: 8px 15px; 
+            border-radius: 5px; 
+            transition: 0.3s; 
+        }
         .nav-links a:hover { background-color: var(--primary-red); }
 
         /* --- Layout: Split Screen --- */
@@ -46,7 +56,6 @@
             flex-wrap: wrap;
         }
 
-        /* ฝั่งซ้าย: Portrait Slider */
         .left-side {
             flex: 1;
             min-width: 400px;
@@ -78,7 +87,6 @@
             scroll-behavior: smooth;
         }
 
-        /* ซ่อน Scrollbar */
         .slides::-webkit-scrollbar { display: none; }
 
         .slides img {
@@ -106,7 +114,6 @@
             opacity: 0.5;
         }
 
-        /* ฝั่งขวา: ข้อมูลประวัติ */
         .right-side {
             flex: 1.2;
             padding: 60px 5%;
@@ -134,7 +141,6 @@
 
         .info-list span { color: var(--primary-purple); font-weight: bold; width: 120px; display: inline-block; }
 
-        /* --- Section ผลงาน (ด้านล่าง) --- */
         .work-section { padding: 5% 10%; background: #000; }
         .work-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 30px; }
         
@@ -157,7 +163,6 @@
         }
         .work-img-mini img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* --- Video --- */
         .video-area { margin-top: 50px; border-radius: 20px; overflow: hidden; border: 2px solid var(--primary-red); }
 
         @media (max-width: 850px) {
@@ -171,10 +176,10 @@
     <nav class="navbar">
         <div class="logo">JOSS <span>GAWIN</span></div>
         <div class="nav-links">
-            <a href="index.html">หน้าหลัก</a>
-            <a href="joss.html">ผลงานจอส</a>
-            <a href="gawin.html">ผลงานกวิน</a>
-            <a href="both.html">ผลงานคู่</a>
+            <a href="index.html">Home</a>
+            <a href="joss.html">Joss</a>
+            <a href="gawin.html">Gawin</a>
+            <a href="both.html">JossGawin</a>
         </div>
     </nav>
 
