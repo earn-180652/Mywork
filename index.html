@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joss Gawin Fanpage | หน้าหลัก</title>
+    <style>
+        /* ส่วนของการตั้งค่าสีหลัก (ม่วง-แดง) */
+        :root {
+            --primary-purple: #6a0dad;
+            --primary-red: #d40000;
+            --dark-bg: #121212;
+            --card-bg: #1e1e1e;
+            --text-white: #ffffff;
+        }
+
+        body {
+            font-family: 'Kanit', sans-serif; /* แนะนำให้ใช้ฟอนต์ Kanit เพื่อความสวยงาม */
+            background-color: var(--dark-bg);
+            color: var(--text-white);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* ส่วนหัว (Header) */
+        header {
+            background: linear-gradient(135deg, var(--primary-purple), var(--primary-red));
+            padding: 50px 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* เมนูนำทาง (Navigation) */
+        nav {
+            background-color: rgba(0,0,0,0.8);
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--primary-purple);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 30px;
+            transition: 0.3s;
+            border: 1px solid transparent;
+        }
+
+        nav a:hover {
+            background-color: var(--primary-red);
+            border-color: white;
+        }
+
+        /* ส่วนเนื้อหา (Content) */
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .welcome-section {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* แบ่ง 2 คอลัมน์ */
+            gap: 30px;
+        }
+
+        .profile-card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            border-bottom: 5px solid var(--primary-purple);
+            transition: transform 0.3s;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-10px);
+            border-bottom-color: var(--primary-red);
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 400px;
+            background-color: #333; /* สีเทาไว้ก่อนถ้ายังไม่มีรูป */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-info {
+            padding: 20px;
+        }
+
+        .profile-info h2 {
+            margin-top: 0;
+            color: var(--primary-red);
+            border-bottom: 1px solid #444;
+            padding-bottom: 10px;
+        }
+
+        .profile-info ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .profile-info ul li {
+            margin-bottom: 10px;
+        }
+
+        .profile-info span {
+            font-weight: bold;
+            color: #aaa;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            background-color: #000;
+            margin-top: 50px;
+            border-top: 1px solid #333;
+        }
+
+        /* สำหรับมือถือ */
+        @media (max-width: 768px) {
+            .profile-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>JOSS GAWIN</h1>
+        <p>OFFICIAL FANPAGE PROJECT</p>
+    </header>
+
+    <nav>
+        <a href="index.html">หน้าหลัก</a>
+        <a href="joss.html">ผลงานจอส</a>
+        <a href="gawin.html">ผลงานกวิน</a>
+        <a href="both.html">ผลงานคู่</a>
+    </nav>
+
+    <div class="container">
+        
+        <div class="welcome-section">
+            <h2>ยินดีต้อนรับสู่เว็บไซต์แฟนคลับ</h2>
+            <p>รวบรวมข้อมูลและผลงานของ จอส เวอาร์ และ กวิน แคสกี้</p>
+        </div>
+
+        <div class="profile-grid">
+            
+            <div class="profile-card">
+                <div class="profile-img">
+                    <img src="ใส่ชื่อไฟล์รูปจอส.jpg" alt="จอส เวอาร์">
+                </div>
+                <div class="profile-info">
+                    <h2>Joss Way-Ar</h2>
+                    <ul>
+                        <li><span>ชื่อจริง:</span> (ใส่ข้อมูลที่นี่)</li>
+                        <li><span>ชื่อเล่น:</span> (ใส่ข้อมูลที่นี่)</li>
+                        <li><span>วันเกิด:</span> (ใส่ข้อมูลที่นี่)</li>
+                        <li><span>อายุ:</span> (ใส่ข้อมูลที่นี่)</li>
+                        <li><span>การศึกษา:</span> (ใส่ข้อมูลที่นี่)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="profile-card" style="border-bottom-color: var(--primary-red);">
+                <div class="profile-img">
+                    <img src="ใส่ชื่อไฟล์รูปกวิน.jpg" alt="กวิน แคสกี้">
+                </div>
+                <div class="profile-info">
+                    <h2>Gawin Caskey</h2>
+                    <ul>
+                        <li><span>ชื่อจริง:</span> (ใส่ข้อมูลที่นี่)</li>
+                        <li><span>ชื่อเล่น:</span> (ใส่ข้อมูลที่นี่)</li>
+                        <li><span>วันเกิด:</span> (ใส่ข้อมูลที่นี่)</li>
+                        <li><span>อายุ:</span> (ใส่ข้อมูลที่นี่)</li>
+                        <li><span>ความสามารถพิเศษ:</span> (ใส่ข้อมูลที่นี่)</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer>
+        <p>จัดทำโดย [ใส่ชื่อของคุณ] เพื่อส่งคุณครู</p>
+        <p>&copy; 2024 JOSS GAWIN FANPAGE</p>
+    </footer>
+
+</body>
+</html>
