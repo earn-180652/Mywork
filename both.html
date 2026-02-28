@@ -39,20 +39,22 @@
         .nav-links a { color: white; text-decoration: none; margin-left: 15px; font-weight: bold; padding: 8px 15px; border-radius: 5px; transition: 0.3s; }
         .nav-links a:hover { background-color: var(--primary-red); }
 
-/* --- Header Section --- */
-        .hero-section {
-            height: 60vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://i.pinimg.com/736x/21/bc/6e/21bc6eb4e5dceb4812378284a1b5d461.jpg');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-        .hero-section h1 { font-size: 4rem; margin: 0; text-shadow: 2px 2px 10px rgba(0,0,0,0.8); }
-        .hero-section p { font-size: 1.5rem; color: #ccc; }
+ /* --- Header Section --- */
+.hero-section {
+    height: 60vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://i.pinimg.com/736x/21/bc/6e/21bc6eb4e5dceb4812378284a1b5d461.jpg');
+    background-size: cover;
+    
+    /* ปรับจาก center เป็น top เพื่อให้เห็นส่วนหัวของรูป */
+    background-position: top; 
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
         /* --- Section 1: The Timeline (Zig-Zag) --- */
         .section-padding { padding: 80px 10%; }
         .timeline-item {
